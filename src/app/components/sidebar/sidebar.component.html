@@ -1,0 +1,37 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" [opened]="sidebarOpened" style="width: 250px;" >
+      <mat-nav-list>
+        <mat-list-item routerLink="dashboard">
+          <span>Categories</span>
+        </mat-list-item>
+        <mat-list-item routerLink="person">
+          <span>person</span>
+        </mat-list-item>
+        <mat-expansion-panel [class.mat-elevation-z0]="true">
+          <mat-expansion-panel-header>
+            <mat-icon>shopping_cart</mat-icon><span>Products</span>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a  mat-list-item routerLink="perfume">
+              <span>perfumes</span>
+            </a>
+            <a mat-list-item routerLink="skinproduct">
+              <span>skin products</span>
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel  [class.mat-elevation-z0]="true">
+          <mat-expansion-panel-header> 
+          <div>
+            <mat-icon>error_outline</mat-icon><span class="aligned-with-icon">Hello</span>
+          </div>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-nav-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <ng-content></ng-content>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

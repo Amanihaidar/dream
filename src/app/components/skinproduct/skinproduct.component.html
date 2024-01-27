@@ -1,0 +1,8 @@
+<div class="skin-product-list">
+<div *ngFor="let skinProduct of skinProducts" class="skin-product-item">
+    <img [src]="skinProduct.imageUrl" alt="{{ skinProduct.name }}" class="skin-product-image">
+    <h3 class="skin-product-text">{{ skinProduct.name }}</h3>
+    <p>Description: {{ skinProduct.description }}</p>
+    <p>Price: ${{ skinProduct.price }}</p>
+  </div>
+</div>

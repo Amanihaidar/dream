@@ -1,0 +1,29 @@
+.color-toolbar{
+   background-color:rgb(217, 197, 223);
+}
+.example-spacer {
+   flex: 1 1 auto;
+ }
+ .font{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   color: rgb(62, 10, 82);
+ }
+ .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}

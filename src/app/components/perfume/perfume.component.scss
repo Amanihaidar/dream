@@ -1,0 +1,25 @@
+.perfume-item {
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #e8d6f2;
+    border-radius: 0px;
+  }
+  .perfume-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .perfume-image {
+    align-content: center;
+    width: 100%;
+    max-width: 200%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .perfume-text{
+    font-family:'Times New Roman', Times, serif;
+    font-style: bold;
+    font-size:x-large;
+  }

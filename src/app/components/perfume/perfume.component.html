@@ -1,0 +1,9 @@
+<div class="perfume-list">
+<div class="perfume-item"  *ngFor="let perfume of perfumes">
+    <img [src]="perfume.imageUrl" alt="{{ perfume.name }}" width="100" height="100" class="perfume-image">
+    <h3 class="perfume-text">{{ perfume.name }}</h3>
+    <p>Description: {{ perfume.description }}</p>
+    <p>Price: ${{ perfume.price }}</p>
+    <!-- Add more details as needed -->
+  </div>
+</div>
