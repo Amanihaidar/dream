@@ -30,6 +30,14 @@ import {MatTableModule} from '@angular/material/table';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 
 
 
@@ -73,6 +81,15 @@ import { SearchResultComponent } from './components/search-result/search-result.
    ReactiveFormsModule,
    MatTableModule,
    FormsModule,
+   HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
+
 
 
   ],

@@ -2,6 +2,8 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/core/services/search.service';
 import { Product } from 'src/app/core/services/product-model.service';
 import { ProductService } from 'src/app/core/services/product.service';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-toolbar',
@@ -13,10 +15,18 @@ export class ToolbarComponent implements OnInit  {
   filteredProducts: Product[] = [];
 
   constructor(
+    public translate: TranslateService,
     private searchService: SearchService,
     private productService: ProductService
 
-    ) {}
+    ) {
+      translate.addLangs(['en', 'es']);
+      translate.setDefaultLang('en');
+
+    }
+    switchLang(lang: string) {
+      this.translate.use(lang);
+    }
 
   
   @Output() isMenuButtonClicked = new EventEmitter<void>();

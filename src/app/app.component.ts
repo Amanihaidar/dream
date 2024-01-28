@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from './core/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 
+
 export class MyItems {    
   Value: string;    
   constructor(Value:string)    
@@ -17,11 +18,12 @@ export class MyItems {
 })
 export class AppComponent {
 
+
   sidebarOpened: boolean = true;
 
 constructor(private authservice: AuthService, private toastr: ToastrService){
  
-
+  
  
 }
 isLoggedIn(): boolean{

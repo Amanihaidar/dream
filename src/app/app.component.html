@@ -1,6 +1,7 @@
 <div *ngIf="!isLoggedIn()">
   <router-outlet></router-outlet>
 </div>
+
 <div  *ngIf="isLoggedIn()" style="height: 100%;">
 <app-toolbar (isMenuButtonClicked)="toggleSideBar()"></app-toolbar>
 <app-sidebar  [sidebarOpened]="sidebarOpened">
