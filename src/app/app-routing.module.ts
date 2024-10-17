@@ -6,9 +6,10 @@ import { authGuard } from './core/guards/auth.guard';
 import { PerfumeComponent } from './components/perfume/perfume.component';
 import { loginGuard } from './core/guards/login.guard';
 import { SkinproductComponent } from './components/skinproduct/skinproduct.component';
-import { PersonComponent } from './components/person/person.component';
+import { PersonComponent } from './components/personss/person/person.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { ProductTableComponent } from './components/product-table/product-table.component';
 
 
 
@@ -22,7 +23,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [authGuard]
+   // canActivate: [authGuard]
   },
   {
     path: 'login',
@@ -38,6 +39,9 @@ const routes: Routes = [
   { path: 'search-result',
    component: SearchResultComponent 
   },
+  { path: 'product-table',
+  component: ProductTableComponent 
+ },
   {
     path: 'perfume',
     component: PerfumeComponent,

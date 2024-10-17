@@ -10,7 +10,6 @@ import { ProductService } from 'src/app/core/services/product.service';
 export class PerfumeComponent  implements OnInit  {
   perfumes: Product[] = [];
  
-  
 
   constructor(private productService: ProductService) {}
 

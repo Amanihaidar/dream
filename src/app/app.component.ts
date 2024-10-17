@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './core/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { APIClient } from './core/services/api-client.service';
 
 
 export class MyItems {    
@@ -16,16 +17,22 @@ export class MyItems {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
 
   sidebarOpened: boolean = true;
 
-constructor(private authservice: AuthService, private toastr: ToastrService){
+constructor(private authservice: AuthService,
+   private toastr: ToastrService,
+    private apiClient: APIClient )
+    {
  
   
  
 }
+  ngOnInit(): void {
+    this.apiClient.getAll();
+  }
 isLoggedIn(): boolean{
   return this.authservice.isAuthenticatedUser();
 }

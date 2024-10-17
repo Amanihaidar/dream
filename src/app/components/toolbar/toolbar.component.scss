@@ -2,11 +2,14 @@
    background-color:rgb(217, 197, 223);
 }
 .example-spacer {
-   flex: 1 1 auto;
+   align-items: center;
+   padding-right: 30%;
+   
  }
  .font{
    font-family: Georgia, 'Times New Roman', Times, serif;
    color: rgb(62, 10, 82);
+  font-size: x-large;   
  }
  .toolbar {
   display: flex;

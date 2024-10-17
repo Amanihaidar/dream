@@ -20,7 +20,7 @@ import {MatListModule} from '@angular/material/list';
 import { ToastrModule } from 'ngx-toastr';
 import { HighlightDirective } from './core/directive/highlight.directive';
 import { SquarePipe } from './core/pipe/square.pipe';
-import { PersonComponent } from './components/person/person.component';
+import { PersonComponent } from './components/personss/person/person.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatMenuModule } from '@angular/material/menu';
 import { CdkTableModule } from '@angular/cdk/table';
@@ -33,6 +33,13 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PersonManagementComponent } from './components/personss/person-management/person-management.component';
+import { API_BASE_URL, APIClient } from './core/services/api-client.service';
+import { ProductTableComponent } from './components/product-table/product-table.component';
+
+
+
+
 
 export function httpTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -59,6 +66,11 @@ export function httpTranslateLoader(http: HttpClient) {
     ProductListComponent,
     SearchBarComponent,
     SearchResultComponent,
+    PersonManagementComponent,
+    ProductTableComponent,
+    
+   
+    
     
   ],
   imports: [
@@ -93,7 +105,13 @@ export function httpTranslateLoader(http: HttpClient) {
 
 
   ],
-  providers: [],
+  providers: [  APIClient,
+    {
+      provide: API_BASE_URL,
+      useValue: "https://localhost:7133"
+  
+    }
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

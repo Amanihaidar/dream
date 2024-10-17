@@ -1,10 +1,14 @@
 <div class="product-list">
 
-<div *ngFor="let product of filteredProducts" class="product-item">
+<div *ngFor="let product of filteredProducts"  (click)="onSelectProduct(product.id)" 
+[ngClass]="{'selected': product.id === selectedProductId, 'expanded': product.id === expandedProductId}" class="product-item">
   <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
   <h3 class="product-text">{{ product.name }}</h3>
   <p>{{ product.description }}</p>
   <p>Price: ${{ product.price }}</p>
-
+  <div *ngIf="product.id === expandedProductId"  class="product-details" >
+  
+    <!-- Add more detailed information as needed -->
+  </div>
   <!-- Add more details as needed -->
 </div>

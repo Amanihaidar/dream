@@ -2,20 +2,25 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { APIClient, LoginRequestDto } from 'src/app/core/services/api-client.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent {
+  loginrequest: LoginRequestDto [] = [];
   loginForm?: any;
   dateNow: Date;
-  constructor(private fb: FormBuilder,
-     private authService : AuthService,
-      private router: Router,
-       private toastr: ToastrService) {
+
+  constructor(
+   private apiClient: APIClient,
+   private fb: FormBuilder,
+   private router: Router,
+   private toastr: ToastrService,
+      ) {
          this.dateNow = new Date();
        }
 
@@ -31,15 +36,42 @@ export class LoginComponent {
       const username = this.loginForm.get('username').value;
       const password = this.loginForm.get('password').value;
 
+      let loginRequestDto = new LoginRequestDto(); //let made the new class LoginRequestDto available
+      loginRequestDto.firstName = username;
+      loginRequestDto.password = password;
+
+      // this.apiClient.getAll().subscribe(
+      //   res => {
+      //     console.log(res);
+      //     // this.products = res.data;
+      //   }
+      // )
+
+      // this.apiClient.addProduct(productDto).subscribe(
+      //   response => {
+
+      // }, error => {
+      //   console.log(error);
+      // });
+
+
+
        // Call the authentication service's login method
-       if (this.authService.login(username, password)) {
-        // Navigate to the ProductListComponent upon successful login
-        this.router.navigate(['/dashboard']);
+       this.apiClient.login(loginRequestDto).subscribe(response=> {
+        console.log(response)
+        if(response.data == true) { 
+          console.log("success")          // Navigate to the ProductListComponent upon successful login
+           this.router.navigateByUrl('/dashboard');
       } else {
 
-        this.toastr.error('username and password doesnt match!')
         // Handle authentication error (show error message, etc.)
-      }
+      
+        }
+       }, error => {
+        this.toastr.error('username and password doesnt match!')
+
+       });
+
 
     }
   }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Person } from '../modules/person';
+import { Person } from '../models/person';
 import { BehaviorSubject } from 'rxjs';
 import { personsData } from '../constant/personData';
 
@@ -26,9 +26,9 @@ export class PersonService {
 
   edit(person: Person) {
     let findElem = this.persons.find(p => p.id == person.id);
-    findElem!.firstName = person.firstName;
-    findElem!.age = person.age;
-    findElem!.job = person.job;
+    findElem!.product = person.product;
+    findElem!.name = person.name;
+    findElem!.price = person.price;
     this.persons$.next(this.persons);
   }
 

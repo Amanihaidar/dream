@@ -13,12 +13,22 @@ import { ProductService } from 'src/app/core/services/product.service';
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
   filteredProducts: Product[] = [];
+  selectedProductId: number | null = null; // To track the selected product
+  expandedProductId: number | null = null;
 
 
+  
   constructor(private productService: ProductService,
      private searchService: SearchService
      ) {}
 
+
+     onSelectProduct(productId: number): void {
+      this.selectedProductId = productId;
+      this.expandedProductId = this.expandedProductId === productId ? null : productId; // Toggle expand/collapse
+    }
+     
+    
   ngOnInit(): void {
     this.products = this.productService.getProducts();
     this.filteredProducts = [...this.products];

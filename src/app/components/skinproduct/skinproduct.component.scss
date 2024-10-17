@@ -1,9 +1,10 @@
 .skin-product-item {
-    width: 30%;
-    border: 2px solid #d8c4de;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
+  width: 30%;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+
   }
   .skin-product-list {
     display: flex;
@@ -12,6 +13,7 @@
   }
 
   .skin-product-image {
+    align-content: center;
     width: 100%;
     max-width: 220px; 
     height: auto;
@@ -21,4 +23,10 @@
     font-family:'Times New Roman', Times, serif;
     font-style: bold;
     font-size:x-large;
+  }
+  .skin-product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #a382b4;
+    border-radius: 5px;
   }

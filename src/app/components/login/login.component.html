@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" class="login-container">
     <div class="row justify-content-center mt-5">
       <div class="col-md-6">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
           <div class="form-group">
             <label for="username" appHighlight>{{'Username' | uppercase}}</label>
             <input type="text" class="form-control" id="username" formControlName="username" placeholder="Enter username">

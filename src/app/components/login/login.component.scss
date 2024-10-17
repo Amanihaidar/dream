@@ -1,0 +1,53 @@
+/* Styles for the login page */
+.login-container {
+    display:flex;
+    padding-right: 20%;
+    padding-bottom: 5%;
+    background-image: url("https://i.pinimg.com/originals/68/3d/51/683d5104cbf2911602e3a408a6b098ad.jpg");
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .login-form {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #b68ac9;
+    border-radius: 5px;
+    background-color: #ebe4f3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form h2 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #fdf4ff;
+    border-radius: 3px;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #987dac;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    color: #4c395f;
+    background-image: url("https://i.pinimg.com/736x/13/c8/b8/13c8b80c85eae68c9bcfe3e0fff25de4.jpg")}
+
+  
+ 
+  
